@@ -71,6 +71,10 @@
     --global-input-focus-borderColor: var(--global-color-alpha);
     --global-input-focus-boxShadowColor: var(--global-color-alpha-x-transparent);
     --global-input-focus-boxShadow: 0 0 0 3px var(--global-input-focus-boxShadowColor);
+
+    /* errors */
+        --global-color-error: red;
+        --global-input-error-borderColor: red;
 }
 
 /*------------------------------------*\
@@ -622,7 +626,7 @@ input::placeholder {
     -moz-appearance: none;
     appearance: none;
     width: 100%;
-    border: 1px solid var(--global-input-borderColor);
+    border: var(--global-borderWidth) solid var(--input-borderColor, var(--global-input-borderColor));
     border-radius: var(--global-borderRadius);
     background-color: var(--global-input-backgroundColor);
     color: var(--global-input-color);
@@ -671,7 +675,7 @@ more padding on the right to avoid overlap
     padding-bottom: var(--global-whitespace-sm);
     font-size: 14px;
     line-height: 16px;
-    color: var(--label-color);
+    color: var(--label-color, var(--global-color-neutral-xx-dark));
 }
 
 .c-label--option {
@@ -935,6 +939,45 @@ more padding on the right to avoid overlap
     ---
     Password toggle custom checkbox
 */
+
+
+.c-toggle-password__icon{
+    width: 24px;
+    height: 24px;
+    fill: var(--global-color-neutral-dark);
+}
+
+.c-toggle-password__icon--hide{
+    display: none;
+}
+
+.c-password-container{
+    position: relative;
+    display: block;
+}
+
+.c-toggle-password{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    bottom: 0;
+
+}
+
+.c-toggle-password__label{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 8px;
+}
+
+.c-toggle-password__checkbox:checked + .c-toggle-password__label .c-toggle-password__icon--hide{
+    display: block;
+}
+.c-toggle-password__checkbox:checked + .c-toggle-password__label .c-toggle-password__icon--show{
+    display: none;
+}
 
 /*------------------------------------*\
 #UTILITIES
