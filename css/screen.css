@@ -73,8 +73,8 @@
     --global-input-focus-boxShadow: 0 0 0 3px var(--global-input-focus-boxShadowColor);
 
     /* errors */
-        --global-color-error: red;
-        --global-input-error-borderColor: red;
+        --global-color-error: crimson;
+        --global-input-error-borderColor: crimson;
 }
 
 /*------------------------------------*\
@@ -610,6 +610,11 @@ input::placeholder {
     Everything form related here
 */
 
+.has-error {
+    --label-color: var(--global-color-error);
+    --input-borderColor: var(--global-input-error-borderColor);    
+  }
+
 .c-form-field--option {
     display: flex;
     align-items: center;
@@ -670,7 +675,7 @@ more padding on the right to avoid overlap
 */
 
 .c-label {
-    --label-color: var(--global-color-neutral-xx-dark);
+    /* --label-color: var(--global-color-neutral-xx-dark); */
     margin-bottom: 0;
     padding-bottom: var(--global-whitespace-sm);
     font-size: 14px;
@@ -942,6 +947,7 @@ more padding on the right to avoid overlap
 
 
 .c-toggle-password__icon{
+    display: block;
     width: 24px;
     height: 24px;
     fill: var(--global-color-neutral-dark);
@@ -978,6 +984,20 @@ more padding on the right to avoid overlap
 .c-toggle-password__checkbox:checked + .c-toggle-password__label .c-toggle-password__icon--show{
     display: none;
 }
+
+/*
+    Component: Error Messege
+    ---
+    Style for Error Messege
+*/
+
+.errormessege{
+    display: flex;
+    float: right;
+    right: 0;
+    font-weight: 600;
+}
+
 
 /*------------------------------------*\
 #UTILITIES
